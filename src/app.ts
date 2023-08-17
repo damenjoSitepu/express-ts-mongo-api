@@ -1,5 +1,5 @@
 // Will be the setup file for the applications
-import express, { Application } from "express";
+import express, { Application, Request, Response, NextFunction } from "express";
 import mongoose from "mongoose";
 import compression from "compression";
 import cors from "cors";
@@ -49,6 +49,12 @@ class App {
     }
 
     public listen(): void {
+        this.express.get("/", (req: Request, res: Response, next: NextFunction) => {
+            return res.json({
+                error: false,
+                message: "Successfully accessing our main route!"
+            });
+        });
         this.express.listen(this.port, () => {
             console.log('This app listening on port ' + this.port);
         });

@@ -15,5 +15,5 @@ const CoaSchema = new Schema<Coa, CoaModel>({
     timestamps: true
 });
 
-const CoaModel: CoaModel = mongoose.model<Coa, CoaModel>("Coa", CoaSchema);
+const CoaModel: CoaModel = mongoose.model<Coa, CoaModel>("chart_of_account", CoaSchema);
 export default CoaModel;

@@ -30,7 +30,7 @@ class CoaController implements Controller {
 
     private initializeRoutes(): void {
         this.router.post(
-            "/create",
+            `${this.path}/create`,
             validationMiddleware(validate.create),
             this.create
         );
